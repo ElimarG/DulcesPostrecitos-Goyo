@@ -12,13 +12,14 @@ const Navbar = () => {
                     <div className="col-lg-12 col-sm-12 text-center">
                         <div className="main-menu-wrap">
                             <div className="site-logo">
-                                <a href="index.html">
+                                <a href="/">
                                     <img src={logo} alt="logo" />
                                 </a>
                             </div>
                             <nav className="main-menu">
                                 <ul>
                                     <li className="current-list-item"><a href="/">Inicio</a></li>
+                                    <li><a href="/">Nosotros</a></li>
                                     <li><a href="/">Productos</a>
                                         <ul className="sub-menu">
                                             <li><a href="/">Tortas</a></li>
