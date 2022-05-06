@@ -46,7 +46,7 @@ const ItemListContainer = ({ greeting }) => {
                             </div>
                             <h3>Torta</h3>
                             <p className="product-price"><span>8 porciones</span> 2000$ </p>
-                            <ItemCount stock={5} initial={1} onAdd={onAdd}/>;
+                            <ItemCount stock={5} initial={1} onAdd={onAdd}/>
                         </div>
                     </div>
                 </div>
