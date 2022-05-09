@@ -1,16 +1,11 @@
 import React from 'react';
+import ItemList from './ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './main.css';
-import cake from './images/cake.png';
-import ItemCount from './ItemCount';
 
 const ItemListContainer = ({ greeting }) => {
-    const onAdd = (quantity) => {
-        alert(`Agregaste ${quantity} productos`);
-    };
-
     return (
-	    <>
+        <>
         <div className="hero-area hero-bg">
             <div className="container">
                 <div className="row">
@@ -39,16 +34,7 @@ const ItemListContainer = ({ greeting }) => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-lg-4 col-md-6 text-center">
-                        <div className="single-product-item">
-                            <div className="product-image">
-                                <a href="/"><img src={cake} alt="" /></a>
-                            </div>
-                            <h3>Torta</h3>
-                            <p className="product-price"><span>8 porciones</span> 2000$ </p>
-                            <ItemCount stock={5} initial={1} onAdd={onAdd}/>
-                        </div>
-                    </div>
+                    <ItemList />
                 </div>
             </div>
         </div>

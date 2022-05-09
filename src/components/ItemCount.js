@@ -14,11 +14,11 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     return (
         <>
         <div className="count-container__contador">
-            <button className="count-container__button" onClick={() => addProduct(-1)} disabled={quantity === initial ? true : null}>-</button>
+            <button className="count-container__button" onClick={() => addProduct(-1)} disabled={quantity === initial}>-</button>
             <span className="count-container__qty">{quantity}</span>
-            <button className="count-container__button" onClick={() => addProduct(+1)} disabled={quantity === stock ? true : null}>+</button>
+            <button className="count-container__button" onClick={() => addProduct(+1)} disabled={quantity === stock}>+</button>
         </div>
-        <a href="/" className="cart-btn" onClick={() => onAdd(quantity)} disabled={stock === 0 ? true : null}><FontAwesomeIcon icon={faCartShopping} /> Añadir</a>
+        <a href="/" className="cart-btn" onClick={() => onAdd(quantity)} disabled={stock === 0}><FontAwesomeIcon icon={faCartShopping} /> Añadir</a>
         </>
     );
   };
