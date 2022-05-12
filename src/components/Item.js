@@ -2,9 +2,9 @@ import React from 'react';
 import ItemCount from './ItemCount';
 import './main.css';
 
-const Item = ({ id, name, price, image, stock, detail}) => {
+const Item = ({ id, title, price, image, stock, detail}) => {
     const onAdd = (quantity) => {
-        alert(`Agregaste ${quantity} ${name} (${detail})`);
+        alert(`Agregaste ${quantity} ${title} (${detail})`);
     };
 
     return (
@@ -12,7 +12,7 @@ const Item = ({ id, name, price, image, stock, detail}) => {
             <div className="product-image">
                 <a href="/"><img src={image} alt="" /></a>
             </div>
-            <h3>{name}</h3>
+            <h3>{title}</h3>
             <p className="product-price"><span>{detail}</span> $ {price} </p>
             <ItemCount stock={stock} initial={1} onAdd={onAdd}/>
         </div>

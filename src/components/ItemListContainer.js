@@ -1,29 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './main.css';
+import { productList } from './data/data.js';
 
 const ItemListContainer = ({ greeting }) => {
-    return (
-        <>
-        <div className="hero-area hero-bg">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-10 offset-lg-1 text-center mt-180 mb-180">
-                        <div className="hero-text">
-                            <div className="hero-text-tablecell">
-                                <p className="subtitle">Te invitamos a</p>
-                                <h1>{greeting}</h1>
-                                <div className="hero-btns">
-                                    <a href="/" className="boxed-btn">Comprar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    const [products, setProducts] = useState([]);
 
+    useEffect(() => {
+        const getProducts = new Promise((resolve, reject) => {
+            setTimeout(() => {
+              resolve(productList);
+            }, 2000);
+          });
+
+          getProducts.then((result) => {
+            setProducts(result);
+          });
+    }, []);
+
+    return (
         <div className="product-section mt-100 mb-100">
             <div className="container">
                 <div className="row">
@@ -34,11 +30,10 @@ const ItemListContainer = ({ greeting }) => {
                     </div>
                 </div>
                 <div className="row">
-                    <ItemList />
+                    <ItemList products={products} />
                 </div>
             </div>
         </div>
-        </>
     );
   };
   
