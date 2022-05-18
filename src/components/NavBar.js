@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import logo from '../logo.png';
 import CartWidget from './CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,22 +14,22 @@ const Navbar = () => {
                     <div className="col-lg-12 col-sm-12 text-center">
                         <div className="main-menu-wrap">
                             <div className="site-logo">
-                                <a href="/">
+                                <Link to="/">
                                     <img src={logo} alt="logo" />
-                                </a>
+                                </Link>
                             </div>
                             <nav className="main-menu">
                                 <ul>
-                                    <li className="current-list-item"><a href="/">Inicio</a></li>
-                                    <li><a href="/">Nosotros</a></li>
-                                    <li><a href="/">Productos</a>
+                                    <li className="current-list-item"><Link className='Link' to='/'>Inicio</Link></li>
+                                    <li><Link className='Link' to="/about">Nosotros</Link></li>
+                                    <li><Link className='Link' to="">Productos</Link>
                                         <ul className="sub-menu">
-                                            <li><a href="/">Tortas</a></li>
-                                            <li><a href="/">CupCake</a></li>
-                                            <li><a href="/">Galletas</a></li>
+                                            <li><Link className='Link' to="/category/cake">Tortas</Link></li>
+                                            <li><Link className='Link' to="/category/cupcake">CupCake</Link></li>
+                                            <li><Link className='Link' to="/category/cookie">Galletas</Link></li>
                                         </ul>
                                     </li>
-                                    <li><a href="/">Contacto</a></li>
+                                    <li><Link className='Link' to="/contact">Contacto</Link></li>
                                     <li>
                                         <CartWidget />
 								    </li>

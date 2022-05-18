@@ -6,6 +6,7 @@ export const productList = [
 		image: "/images/cake.png",
 		stock: 20,
 		detail: "8 porciones",
+		category: "cake",
 		description: "Bizcochuelo humedo de chocolate, relleno de chocotorta, agregado de trozos de chocolate. Cubierta de chocolate y frutillas",
 	},
 	{
@@ -15,6 +16,7 @@ export const productList = [
 		image: "/images/cake_caramel.png",
 		stock: 30,
 		detail: "8 porciones",
+		category: "cake",
 		description: "Bizcocho de vainilla con cubierta de dulce de leche y decorado de cerezas",
 	},
 	{
@@ -24,6 +26,7 @@ export const productList = [
 		image: "/images/cake_selvanegra.png",
 		stock: 10,
 		detail: "8 porciones",
+		category: "cake",
 		description: "Bizcochuelo humedo de chocolate con almibar, relleno y recubierto de crema chantillí y cerezas",
 	},
 	{
@@ -33,6 +36,7 @@ export const productList = [
 		image: "/images/cake_strawberries.png",
 		stock: 15,
 		detail: "8 porciones",
+		category: "cake",
 		description: "Bizcocho de vainilla, relleno de deliciosas frutillas y crema",
 	},
 	{
@@ -42,6 +46,7 @@ export const productList = [
 		image: "/images/cookie.png",
 		stock: 60,
 		detail: "Docena",
+		category: "cookie",
 		description: "Masa a base de mantequilla y azúcar con chispas de chocolate semidulces",
 	},
 	{
@@ -51,6 +56,7 @@ export const productList = [
 		image: "/images/cookie_redvelvet.png",
 		stock: 24,
 		detail: "6 unidades",
+		category: "cookie",
 		description: "Masa a base de mantequilla y azúcar, con colorante alimentario rojo y chispas de chocolate blanco",
 	},
 	{
@@ -60,6 +66,7 @@ export const productList = [
 		image: "/images/cookie_combined.png",
 		stock: 40,
 		detail: "Docena",
+		category: "cookie",
 		description: "Masa a base de mantequilla y azúcar, sabores chocolate y vainilla",
 	},
 	{
@@ -69,6 +76,27 @@ export const productList = [
 		image: "/images/cupcake.png",
 		stock: 36,
 		detail: "6 unidades",
+		category: "cupcake",
 		description: "Muffin de chocolate decorado con crema y nuez",
+	},
+	{
+		id: 9,
+		title: "Cupcake varios sabores con Crema",
+		price: 2740,
+		image: "/images/cupcake-combined.png",
+		stock: 42,
+		detail: "6 unidades",
+		category: "cupcake",
+		description: "Muffin de chocolate, vainilla y red velvet decorado con crema",
+	},
+	{
+		id: 10,
+		title: "Porción torta de chocolate",
+		price: 2200,
+		image: "/images/cake-portion.png",
+		stock: 8,
+		detail: "3 porciones",
+		category: "cake",
+		description: "Torta húmeda de chocolate rellena y cubierta de ganache de chocolate",
 	},
 ];

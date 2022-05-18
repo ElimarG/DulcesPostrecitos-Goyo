@@ -1,18 +1,27 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Navbar from './components/NavBar';
-import Hero from './components/Hero';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 
+import Navbar from './components/NavBar';
+import About from './views/About';
+import Contact from './views/Contact';
+import Footer from './components/Footer';
+
 function App() {
   return (
-    <>
-    <Navbar />
-    <Hero greeting="Descubrir las delicias de nuestros productos" />
-    <ItemListContainer />
-    <ItemDetailContainer productId={1} />
-    </>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<ItemListContainer />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/category/:categoryId' element={<ItemListContainer />} />
+        <Route path='/item/:id' element={<ItemDetailContainer />} />
+        <Route path='/contact' element={<Contact />} />
+      </Routes>
+      <Footer />
+  </Router>
   );
 }
 

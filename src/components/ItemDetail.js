@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemCount from './ItemCount';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './main.css';
 
@@ -7,8 +8,9 @@ const ItemDetail = ({ item }) => {
     const onAdd = (quantity) => {
       alert(`Agregaste ${quantity} ${item.title} (${item.detail})`);
     };
-  
+
     return (
+		<>
         <div className="single-product mt-150 mb-150">
 			<div className="container">
 				<div className="row">
@@ -30,6 +32,7 @@ const ItemDetail = ({ item }) => {
 				</div>
 			</div>
 		</div>
+		</>
     );
   };
   
