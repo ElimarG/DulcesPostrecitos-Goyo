@@ -30,6 +30,7 @@ Estará disponible en http://localhost:3000
  - [Bootstrap](https://getbootstrap.com/)
  - [Fontawesome](https://fontawesome.com/v5/docs/web/use-with/react)
  - [React Router Dom](https://www.npmjs.com/package/react-router-dom)
+ - [Toastify](https://www.npmjs.com/package/react-toastify)
 
 ## Demo
 

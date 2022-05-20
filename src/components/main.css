@@ -2238,3 +2238,38 @@ h2.widget-title:after {
   color: #fff;
   margin-bottom: 10px;
 }
+
+/* -----------------------------------------------------------------------------
+
+# 404 Page Styles
+
+----------------------------------------------------------------------------- */
+.error-text i {
+  font-size: 90px;
+  margin-bottom: 30px;
+  color: #051922;
+}
+
+.error-text h1 {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.error-text p {
+  font-size: 15px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.full-height-section {
+  height: 100%;
+  display: table;
+  width: 100%;
+}
+
+.full-height-tablecell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}

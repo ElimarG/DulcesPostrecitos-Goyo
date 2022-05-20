@@ -14,6 +14,7 @@ const ItemListContainer = () => {
     const { categoryId } = useParams();
 
     useEffect(() => {
+        setLoading(true);
         const getProducts = new Promise((resolve, reject) => {
             setTimeout(() => {
                 setLoading(false);

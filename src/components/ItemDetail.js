@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './main.css';
 
 const ItemDetail = ({ item }) => {
+	const [add, setAdd] = useState(false);
+
     const onAdd = (quantity) => {
-      alert(`Agregaste ${quantity} ${item.title} (${item.detail})`);
+		setAdd(true);
+		toast.success(`Agregaste ${quantity} ${item.title} (${item.detail})`, {
+			theme: "light",
+			position: "top-center",
+			autoClose: 3000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+		});
     };
 
     return (
@@ -25,7 +39,11 @@ const ItemDetail = ({ item }) => {
 							<p className="single-product-pricing"><span>{item.detail}</span>$ {item.price}</p>
 							<p>{item.description}</p>
 							<div className="single-product-form">
-								<ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
+								{ add ? (
+									<Link to="/cart" className="cart-btn Link">Terminar compra</Link>
+								) : (
+									<ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
+								)}
 							</div>
 						</div>
 					</div>
