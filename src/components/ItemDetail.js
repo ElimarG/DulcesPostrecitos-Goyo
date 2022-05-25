@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
@@ -8,9 +9,11 @@ import './main.css';
 
 const ItemDetail = ({ item }) => {
 	const [add, setAdd] = useState(false);
+	const { addItem } = useContext(CartContext)
 
     const onAdd = (quantity) => {
 		setAdd(true);
+		addItem(item, quantity)
 		toast.success(`Agregaste ${quantity} ${item.title} (${item.detail})`, {
 			theme: "light",
 			position: "top-center",
@@ -42,7 +45,7 @@ const ItemDetail = ({ item }) => {
 								{ add ? (
 									<Link to="/cart" className="cart-btn Link">Terminar compra</Link>
 								) : (
-									<ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
+									<ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
 								)}
 							</div>
 						</div>

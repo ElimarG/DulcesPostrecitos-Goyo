@@ -7,7 +7,7 @@ const Item = ({ id, title, price, image, stock, detail}) => {
     return (
         <div className="single-product-item">
             <div className="product-image">
-                <a href="/"><img src={image} alt="" /></a>
+            <Link to={`/item/${id}`}><img src={image} alt="" /></Link>
             </div>
             <h3>{title}</h3>
             <p className="product-price"><span>{detail}</span> $ {price} </p>

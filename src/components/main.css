@@ -1573,6 +1573,19 @@ input[type="number"] {
   margin-top: 35px;
 }
 
+.qty-display {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  position: absolute;
+  text-align: center;
+  line-height: 17px;
+  color: black;
+}
+
 ul.product-share {
   margin: 0;
   padding: 0;

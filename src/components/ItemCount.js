@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './main.css';
 
 const ItemCount = ({ stock, initial, onAdd }) => {
@@ -10,7 +11,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     const addProduct = (num) => {
         setQuantity(quantity + num);
     };
-
+ 
     return (
         <>
         <div className="count-container__contador">

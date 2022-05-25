@@ -1,4 +1,5 @@
 import React from 'react';
+import CartProvider from './context/CartContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,20 +16,22 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<ItemListContainer />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/category/:categoryId' element={<ItemListContainer />} />
-        <Route path='/item/:id' element={<ItemDetailContainer />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='*' element={<Page404 />} />
-      </Routes>
-      <Footer />
-      <ToastContainer />
-  </Router>
+    <CartProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/category/:categoryId' element={<ItemListContainer />} />
+          <Route path='/item/:id' element={<ItemDetailContainer />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='*' element={<Page404 />} />
+        </Routes>
+        <Footer />
+        <ToastContainer />
+      </Router>
+    </CartProvider>
   );
 }
 
