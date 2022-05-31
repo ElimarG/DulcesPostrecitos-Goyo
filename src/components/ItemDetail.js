@@ -17,7 +17,7 @@ const ItemDetail = ({ item }) => {
 		toast.success(`Agregaste ${quantity} ${item.title} (${item.detail})`, {
 			theme: "light",
 			position: "top-center",
-			autoClose: 3000,
+			autoClose: 1500,
 			hideProgressBar: false,
 			closeOnClick: true,
 			pauseOnHover: true,

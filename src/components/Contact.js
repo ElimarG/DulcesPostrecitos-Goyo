@@ -1,13 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMap, faClock, faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { toast } from 'react-toastify';
 
-import Breadcrumb from '../components/Breadcrumb';
+import Breadcrumb from './Breadcrumb';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../components/main.css';
+import './main.css';
 
 const Contact = () => {
+    const [inputText, setInputText] = useState('');
+
+    const onInputChange = (e) => {
+        setInputText({ ...inputText, [e.target.name]: e.target.value });
+    };
+    
+    const onSubmit = (e) => {
+        e.preventDefault();
+        toast.success(`Hola, ${inputText.name}. El mensaje se ha enviado exitosamente! 
+        Pronto recibira una respuesta al mail ${inputText.email}`, {
+			theme: "light",
+			position: "top-center",
+			autoClose: 3000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+		});
+        console.log(
+          `Mensaje enviado! \nNombre: ${inputText.name} \nEmail: ${inputText.email} \nAsunto: ${inputText.subject} \nMensaje: ${inputText.message}`
+        );
+    };
+
 	return (
         <>
         <Breadcrumb title="Contacto" description="Horneamos todos los días" />
@@ -21,16 +46,16 @@ const Contact = () => {
                         </div>
                         <div id="form_status"></div>
                         <div className="contact-form">
-                            <form id="dp-contact">
+                            <form type="POST" id="dp-contact" onSubmit={onSubmit}>
                                 <p>
-                                    <input type="text" placeholder="Nombre" name="name" id="name" />
-                                    <input type="email" placeholder="Email" name="email" id="email" />
+                                    <input type="text" placeholder="Nombre" name="name" id="name" onChange={onInputChange} />
+                                    <input type="email" placeholder="Email" name="email" id="email" onChange={onInputChange} />
                                 </p>
                                 <p>
-                                    <input type="tel" placeholder="Telefono" name="phone" id="phone" />
-                                    <input type="text" placeholder="Asunto" name="subject" id="subject" />
+                                    <input type="tel" placeholder="Telefono" name="phone" id="phone" onChange={onInputChange} />
+                                    <input type="text" placeholder="Asunto" name="subject" id="subject"  onChange={onInputChange} />
                                 </p>
-                                <p><textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje"></textarea></p>
+                                <p><textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje" onChange={onInputChange} ></textarea></p>
                                 <p><input type="submit" value="Enviar" /></p>
                             </form>
                         </div>

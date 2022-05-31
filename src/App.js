@@ -9,8 +9,9 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 
 import Navbar from './components/NavBar';
 import About from './views/About';
-import Contact from './views/Contact';
+import Contact from './components/Contact';
 import Cart from './components/Cart';
+import Order from './components/Order';
 import Page404 from './views/Page404';
 import Footer from './components/Footer';
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/item/:id' element={<ItemDetailContainer />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/checkout' element={<Order />} />
           <Route path='*' element={<Page404 />} />
         </Routes>
         <Footer />

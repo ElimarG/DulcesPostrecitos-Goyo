@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './main.css';
 
 const Cart = () => {
-    const { cart, removeItem, clearCart } = useContext(CartContext);
+    const { cart, removeItem, clearCart, getTotal } = useContext(CartContext);
 
 	return (
         <>
@@ -19,7 +19,7 @@ const Cart = () => {
             <div className="cart-section mt-100 mb-100">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-12 col-md-12">
+                        <div className="col-lg-8 col-md-12">
                             <div className="cart-table-wrap">
                                 <table className="cart-table">
                                     <thead className="cart-table-head">
@@ -55,13 +55,33 @@ const Cart = () => {
                                 </table>
                             </div>
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-8">
+                        <div className="col-lg-4">
                             <div className="total-section">
+                                <table className="total-table">
+                                    <thead className="total-table-head">
+                                        <tr className="table-total-row">
+                                            <th>Total</th>
+                                            <th>Precio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr className="total-data">
+                                            <td><strong>Subtotal: </strong></td>
+                                            <td>${getTotal()}</td>
+                                        </tr>
+                                        <tr className="total-data">
+                                            <td><strong>Envio: </strong></td>
+                                            <td>$150</td>
+                                        </tr>
+                                        <tr className="total-data">
+                                            <td><strong>Total: </strong></td>
+                                            <td>${getTotal() + 150}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                                 <div className="cart-buttons">
-                                    <button type="button" className="cart-btn" onClick={clearCart}>Vaciar</button>
-                                    <Link className='boxed-btn black Link' to="/">Aceptar</Link>
+                                    <button type="button" className="cart-btn" onClick={clearCart}>Vaciar carrito</button>
+                                    <Link className='boxed-btn black Link' to="/checkout">Finalizar compra</Link>
                                 </div>
                             </div>
                         </div>
@@ -70,12 +90,13 @@ const Cart = () => {
             </div>
         )
         : 
-        <div className="more-products mt-100">
+        <div className="more-products mt-80">
             <div className="container">
 			    <div className="row">
 				    <div className="col-lg-8 offset-lg-2 text-center">
                         <div className="section-title">
-                            <h3><span className="orange-text">No hay productos </span> en el carrito</h3>
+                            <h1>No hay productos en el carrito</h1>
+                            <Link className="boxed-btn Link" to="/">Volver al inicio</Link>
                         </div>
                     </div>
                 </div>
