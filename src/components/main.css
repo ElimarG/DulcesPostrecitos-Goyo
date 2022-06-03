@@ -1898,7 +1898,7 @@ table.order-details tbody td {
 }
 
 .feature-bg:after {
-  background-image: url(./assets/img/brownie.jpg);
+  background-image: url(../assets/img/brownie.jpg);
   position: absolute;
   right: 0;
   top: 0;

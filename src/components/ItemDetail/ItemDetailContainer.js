@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
-import { productList } from './data/data.js';
-import Breadcrumb from './Breadcrumb';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../firebase/firebase';
+import Breadcrumb from '../Breadcrumb/Breadcrumb';
 
 const ItemDetailContainer = () => {
     const [item, setItems] = useState({});
@@ -10,18 +11,16 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams();
 
-    useEffect(() => {
-        const getItem = new Promise((resolve, reject) => {
-            setTimeout(() => {
-              setLoading(false)
-              const itemId = productList.find((prodId) => prodId.id === parseInt(id));
-              resolve(itemId);
-            }, 2000);
-          });
-
-          getItem.then((result) => {
-            setItems(result);
-          });
+    useEffect(() => {  
+      const getItem = doc(db, 'products', id);
+      getDoc(getItem)
+        .then((result) => {
+          const itemId = { id: result.id, ...result.data() };
+          setItems(itemId);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     }, [id]);
 
     return (

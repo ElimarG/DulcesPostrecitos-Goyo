@@ -33,21 +33,27 @@ const CartProvider = ({ children }) => {
         setCart([]);
     };
 
-    function sum(list) {
+    const sum = (list) => {
         let result = 0;
         for (let i = 0; i < list.length; i++) {
           result += list[i];
         }
         return result;
-      }
+    }
     
-      const getTotal = () => {
-        let subtotal = cart.map((item) => item.quantity * item.price);
-        return sum(subtotal);
-      };
+    const getTotal = () => {
+    let subtotal = cart.map((item) => item.quantity * item.price);
+    return sum(subtotal);
+    };
+
+    const itemQuantity = () => {
+        let qty = cart.map((item) => item.quantity);
+        let result = sum(qty);
+        return result;
+    };
 
     return (
-        <CartContext.Provider value={{cart, setCart, addItem, removeItem, clearCart, getTotal,}}>
+        <CartContext.Provider value={{cart, setCart, addItem, removeItem, clearCart, getTotal, itemQuantity,}}>
             {children}
         </CartContext.Provider>
     );

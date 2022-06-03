@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './main.css';
+import '../main.css';
 
 const ItemCount = ({ stock, initial, onAdd }) => {
     const [quantity, setQuantity] = useState(initial);

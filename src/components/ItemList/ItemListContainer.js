@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { collection, query, getDocs, where } from 'firebase/firestore';
+import { db } from '../../firebase/firebase';
 import ItemList from './ItemList';
-import { productList } from './data/data.js';
-import Breadcrumb from './Breadcrumb';
+import Breadcrumb from '../Breadcrumb/Breadcrumb';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './main.css';
+import '../main.css';
 
 const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
@@ -15,16 +16,16 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         setLoading(true);
-        const getProducts = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                setLoading(false);
-                const prodId = categoryId ? productList.filter((item) => item.category === categoryId) : productList;
-                resolve(prodId);
-            }, 2000);
-          });
-
-          getProducts.then((result) => {
-            setProducts(result);
+        const getProducts = categoryId ? query(collection(db, 'products'), where('category', '==', categoryId)) : collection(db, 'products');
+        getDocs(getProducts)
+          .then((result) => {
+            const prodId = result.docs.map((item) => {
+              return { ...item.data(), id: item.id };
+            });
+            setProducts(prodId);
+          })
+          .finally(() => {
+            setLoading(false);
           });
     }, [categoryId]);
 

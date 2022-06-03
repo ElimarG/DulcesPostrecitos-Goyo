@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import { CartContext } from '../../context/CartContext';
 import { toast } from 'react-toastify';
-import Breadcrumb from './Breadcrumb';
+import Breadcrumb from '../Breadcrumb/Breadcrumb';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './main.css';
+import '../main.css';
 
 const Order = () => {
     const { cart, getTotal } = useContext(CartContext);

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from '../logo.png';
+import logo from '../../logo.png';
 import CartWidget from './CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './main.css';
+import '../main.css';
 
 const Navbar = () => {
     return (

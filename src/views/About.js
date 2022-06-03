@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShippingFast, faMoneyBillAlt, faBriefcase, faSyncAlt } from '@fortawesome/free-solid-svg-icons';
 
-import Breadcrumb from '../components/Breadcrumb';
+import Breadcrumb from '../components/Breadcrumb/Breadcrumb';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/main.css';

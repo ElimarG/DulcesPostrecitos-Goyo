@@ -4,16 +4,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from './components/ItemList/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 
-import Navbar from './components/NavBar';
+import Navbar from './components/NavBar/NavBar';
 import About from './views/About';
-import Contact from './components/Contact';
-import Cart from './components/Cart';
-import Order from './components/Order';
+import Contact from './components/Contact/Contact';
+import Cart from './components/Cart/Cart';
+import Order from './components/Order/Order';
 import Page404 from './views/Page404';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (

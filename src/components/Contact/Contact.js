@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMap, faClock, faAddressBook } from '@fortawesome/free-solid-svg-icons';
 import { toast } from 'react-toastify';
 
-import Breadcrumb from './Breadcrumb';
+import Breadcrumb from '../Breadcrumb/Breadcrumb';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './main.css';
+import '../main.css';
 
 const Contact = () => {
     const [inputText, setInputText] = useState('');

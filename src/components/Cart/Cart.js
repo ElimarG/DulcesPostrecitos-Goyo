@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../context/CartContext';
+import { CartContext } from '../../context/CartContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-import Breadcrumb from './Breadcrumb';
+import Breadcrumb from '../Breadcrumb/Breadcrumb';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './main.css';
+import '../main.css';
 
 const Cart = () => {
     const { cart, removeItem, clearCart, getTotal } = useContext(CartContext);
@@ -38,7 +38,7 @@ const Cart = () => {
                                             <tr className="table-body-row" key={product.id}>
                                                 <td className="product-remove"><i onClick={()=>removeItem(product.id)}><FontAwesomeIcon icon={faWindowClose} /></i></td>
                                                 <td className="product-image"><img src={product.image} alt="" /></td>
-                                                <td className="product-name">{product.title}</td>
+                                                <td className="product-name">{product.title} ({product.detail})</td>
                                                 <td className="product-price">${product.price}</td>
                                                 <td className="product-quantity">{product.quantity}</td>
                                                 <td className="product-price">${product.quantity * product.price}</td>

@@ -8,6 +8,7 @@ Dulces Postrecitos es un e-commerce para la venta de productos de pastelería.
 - Nosotros - Información acerca de la tienda.
 - Productos - Filtro por categorías, vista con el detalle del producto elegido y la opción de agregar una cantidad al carrito. (Se tiene en cuenta que los usuarios no puedan agregar más items al carrito de los que hay disponibles)
 - Contacto - Formulario y datos de contacto de la tienda: direccion, telefono, email.
+- Carrito - Vista completa de los items del carrito con su total y la opción de eliminar un producto del carrito.
 
 ## Instalación
 
@@ -31,6 +32,7 @@ Estará disponible en http://localhost:3000
  - [Fontawesome](https://fontawesome.com/v5/docs/web/use-with/react)
  - [React Router Dom](https://www.npmjs.com/package/react-router-dom)
  - [Toastify](https://www.npmjs.com/package/react-toastify)
+ - [FireBase](https://firebase.google.com/?hl=es)
 
 ## Demo
 
