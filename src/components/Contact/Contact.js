@@ -8,8 +8,16 @@ import Breadcrumb from '../Breadcrumb/Breadcrumb';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../main.css';
 
+const initialState = {
+	name: '',
+	email: '',
+    phone: '',
+    subject: '',
+    message: '',
+};
+
 const Contact = () => {
-    const [inputText, setInputText] = useState('');
+    const [inputText, setInputText] = useState(initialState);
 
     const onInputChange = (e) => {
         setInputText({ ...inputText, [e.target.name]: e.target.value });
@@ -28,9 +36,7 @@ const Contact = () => {
 			draggable: true,
 			progress: undefined,
 		});
-        console.log(
-          `Mensaje enviado! \nNombre: ${inputText.name} \nEmail: ${inputText.email} \nAsunto: ${inputText.subject} \nMensaje: ${inputText.message}`
-        );
+        setInputText(initialState);
     };
 
 	return (
@@ -48,14 +54,14 @@ const Contact = () => {
                         <div className="contact-form">
                             <form type="POST" id="dp-contact" onSubmit={onSubmit}>
                                 <p>
-                                    <input type="text" placeholder="Nombre" name="name" id="name" onChange={onInputChange} />
-                                    <input type="email" placeholder="Email" name="email" id="email" onChange={onInputChange} />
+                                    <input type="text" placeholder="Nombre" name="name" id="name" value={inputText.name} onChange={onInputChange} required />
+                                    <input type="email" placeholder="Email" name="email" id="email" value={inputText.email} onChange={onInputChange} required />
                                 </p>
                                 <p>
-                                    <input type="tel" placeholder="Telefono" name="phone" id="phone" onChange={onInputChange} />
-                                    <input type="text" placeholder="Asunto" name="subject" id="subject"  onChange={onInputChange} />
+                                    <input type="number" placeholder="Telefono" name="phone" id="phone" value={inputText.phone} onChange={onInputChange} required />
+                                    <input type="text" placeholder="Asunto" name="subject" id="subject" value={inputText.subject} onChange={onInputChange} required />
                                 </p>
-                                <p><textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje" onChange={onInputChange} ></textarea></p>
+                                <p><textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje" value={inputText.message} onChange={onInputChange} required ></textarea></p>
                                 <p><input type="submit" value="Enviar" /></p>
                             </form>
                         </div>

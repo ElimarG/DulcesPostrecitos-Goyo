@@ -1567,6 +1567,11 @@ input[type="number"] {
   margin-bottom: 15px;
 }
 
+.btn-order{
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
 .single-product-content h4 {
   font-size: 20px;
   font-weight: 600;
@@ -1743,14 +1748,14 @@ tr.total-data td strong {
   padding: 20px;
 }
 
-.billing-address-form form p input {
+.billing-address-form p input {
   border: 1px solid #ddd;
   padding: 15px;
   width: 100%;
   border-radius: 3px;
 }
 
-.billing-address-form form p textarea {
+.billing-address-form p textarea {
   width: 100%;
   border-radius: 3px;
   border: 1px solid #ddd;
@@ -1775,7 +1780,7 @@ tr.total-data td strong {
   color: #F28123;
 }
 
-.billing-address-form form p:last-child {
+.billing-address-form p:last-child {
   margin-bottom: 0;
 }
 
@@ -2146,7 +2151,7 @@ h2.widget-title:after {
   line-height: 1.8;
 }
 
-.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email] {
+.contact-form form p input[type=text], .contact-form form p input[type=number], .contact-form form p input[type=email] {
   width: 49%;
   padding: 15px;
   border: 1px solid #ddd;
