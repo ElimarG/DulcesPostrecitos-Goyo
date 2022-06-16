@@ -2,7 +2,7 @@
 
 Dulces Postrecitos es un e-commerce para la venta de productos de pastelería.
 
-## Detalla
+## Detalle
 
 - Inicio - Vista general de los productos con foto y detalles mínimos.
 - Nosotros - Información acerca de la tienda.
@@ -37,6 +37,8 @@ Estará disponible en http://localhost:3000
 ## Demo
 
 https://hilarious-syrniki-e0bce0.netlify.app/
+
+![Demo Dulces Postrecitos](https://github.com/ElimarG/DulcesPostrecitos-Goyo/blob/master/dulcespostrecitos.gif)
 
 ## Authors
 

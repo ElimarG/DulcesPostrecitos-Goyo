@@ -15,11 +15,6 @@ const initialState = {
 	address: '',
     phone: '',
     note: '',
-    addressng: '',
-    floor: '',
-    department: '',
-    streets: '',
-    observation: '',
 };
 
 const Order = () => {
@@ -41,6 +36,7 @@ const Order = () => {
               name: inputText.name,
               email: inputText.email,
               phone: inputText.phone,
+              address: inputText.address,
             },
             items: cart.map((product) => ({
               id: product.id,
@@ -50,6 +46,7 @@ const Order = () => {
             })),
             date: today.toLocaleDateString(),
             total: getTotal() + 150,
+            status: 'Generada'
         };
         const docRef = await addDoc(collection(db, 'orders'), {	newOrder, });
         setLoading(false);
@@ -102,28 +99,6 @@ const Order = () => {
                                                         <p><input type="text" placeholder="Dirección" name="address" value={inputText.address} onChange={onInputChange} required/></p>
                                                         <p><input type="number" placeholder="Telefono" name="phone" value={inputText.phone} onChange={onInputChange} required/></p>
                                                         <p><textarea name="note" id="bill" cols="30" rows="10" placeholder="Notas" value={inputText.note} onChange={onInputChange}></textarea></p>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card single-accordion accordion-item">
-                                        <div className="card-header" id="headingTwo">
-                                            <h5 className="mb-0 accordion-header">
-                                                <button className="btn btn-link accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Dirección de envío
-                                                </button>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                            <div className=" card-bodyaccordion-body">
-                                                <div className="billing-address-form">
-                                                    
-                                                        <p><input type="text" placeholder="Dirección" name="addressng" value={inputText.addressng} onChange={onInputChange} required/></p>
-                                                        <p><input type="text" placeholder="Piso" name="floor" value={inputText.floor} onChange={onInputChange} required/></p>
-                                                        <p><input type="text" placeholder="Departamento" name="department" value={inputText.department} onChange={onInputChange} required/></p>
-                                                        <p><input type="text" placeholder="Entre calles" name="streets" value={inputText.streets} onChange={onInputChange}/></p>
-                                                        <p><textarea name="observation" id="bill" cols="30" rows="10" placeholder="Observación" value={inputText.observation} onChange={onInputChange}></textarea></p>
                                                     
                                                 </div>
                                             </div>
@@ -193,7 +168,7 @@ const Order = () => {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <button type="submit" className="cart-btn btn-order boxed-btn">Hacer pedido</button>
+                                <button type="submit" className="cart-btn btn-order boxed-btn">Realizar compra</button>
                             </div>
                         </div>
                     </div>

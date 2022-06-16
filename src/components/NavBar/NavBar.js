@@ -6,7 +6,8 @@ import CartWidget from './CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../main.css';
 
-const Navbar = () => {
+
+function Navbar() {
     return (
         <div className="top-header-area" id="sticker">
             <div className="container">
@@ -34,7 +35,7 @@ const Navbar = () => {
                                         <Link className='shopping-cart Link' to="/cart">
                                             <CartWidget />
                                         </Link>
-								    </li>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -43,6 +44,6 @@ const Navbar = () => {
             </div>
         </div>
     );
-};
+}
   
 export default Navbar;
